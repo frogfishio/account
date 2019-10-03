@@ -1,5 +1,5 @@
 {
-  "name": "account",
+  "name": "@frogfish/account",
   "version": "1.0.1",
   "description": "Account Service",
   "main": "gulpfile.js",

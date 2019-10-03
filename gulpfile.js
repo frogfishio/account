@@ -31,7 +31,7 @@ const { src, dest, series } = require('gulp');
 async function clean() {
   const del = require('del');
   await del(['build/release']);
-  require('mkdirp')('./build/release/');
+  require('mkdirp')('build/release');
 }
 
 async function compile() {
