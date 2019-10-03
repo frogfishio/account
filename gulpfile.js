@@ -59,4 +59,4 @@ async function services() {
 
 exports.clean = clean;
 exports.compile = compile;
-exports.build = series(clean, compile, package, services);
+exports.build = series(compile, package, services);
