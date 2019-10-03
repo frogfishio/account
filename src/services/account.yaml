@@ -1,0 +1,305 @@
+swagger: '2.0'
+info:
+  title: Account service
+  description: Service for managing accounts
+  version: 1.0.0
+host: localhost
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  '/accounts/skip/{skip}/limit/{limit}':
+    get:
+      summary: Returns list of accounts
+      description: |
+        Returns list of accounts
+      parameters:
+        - name: skip
+          in: path
+          description: How many accounts sto skip
+          required: true
+          type: string
+        - name: limit
+          in: path
+          description: How many accounts to return
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'read_accounts'
+  /account:
+    post:
+      summary: Creates an account
+      description: |
+        Creates a new account
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'write_accounts'
+  '/account/{id}':
+    get:
+      summary: Returns account
+      description: |
+        Returns Account
+      parameters:
+        - name: id
+          in: path
+          description: Application id
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'read_accounts'
+    put:
+      summary: Updates account
+      description: |
+        Updates contact
+      parameters:
+        - name: id
+          in: path
+          description: Application id
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'write_accounts'
+    delete:
+      summary: Deletes account
+      description: |
+        Deletes product
+      parameters:
+        - name: id
+          in: path
+          description: Application id
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'write_accounts'
+  '/account/{id}/context/{ctx}':
+    post:
+      summary: Creates new context for an account
+      description: |
+        Creates new context for an account
+      parameters:
+        - name: id
+          in: path
+          description: Account id
+          required: true
+          type: string
+        - name: ctx
+          in: path
+          description: Context id - ignored for put
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'write_accounts'
+    delete:
+      summary: Deletes  context for the account
+      description: |
+        Deletes  context for the account
+      parameters:
+        - name: id
+          in: path
+          description: Account id
+          required: true
+          type: string
+        - name: ctx
+          in: path
+          description: Context id
+          required: true
+          type: string
+      tags:
+        - Account
+      responses:
+        '200':
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - job_auth:
+            - 'write_accounts'
+definitions:
+  Account:
+    properties:
+      _uuid:
+        type: string
+        description: Unique identifier representing a specific Account
+      reference:
+        type: string
+        description: >-
+          A reference field if a Account is to refer something e.g. another
+          Account to make sublisting
+      published:
+        type: number
+        description: Date timestamp published or null if not published
+      name:
+        type: string
+        description: Description of listing.
+      slug:
+        type: string
+        description: Slug description of listing
+      summary:
+        type: string
+        description: Summary of the listing
+      description:
+        type: string
+        description: Meta description for the listing
+      status:
+        type: string
+        description: 'Listing status, new, approved etc.'
+      comments:
+        type: string
+        description: Any listing comments from administrator e.g. if listing is rejected
+      positioning:
+        type: string
+        description: featured or other type of positioning
+      display:
+        type: string
+        description: 'How to display the listing 1x1, 1x2, 2x1, 2x2'
+      weight:
+        type: number
+        description: Sorting weight for the listing
+      type:
+        type: string
+        description: 'Listing type house, car, pet'
+      category:
+        type: string
+        description: Listing category e.g. Things for sale
+      main_image:
+        type: string
+        description: Listing's main image
+      images:
+        type: array
+        description: Sorted array of images
+      address:
+        type: string
+        description: Address reference
+      location:
+        type: string
+        description: Geographic location related to listing if any
+      count:
+        type: number
+        description: Number of total requests
+      likes:
+        type: number
+        description: Sum of all likes
+      rating:
+        type: number
+        description: 0-5 star double precision rating
+      highlights:
+        type: array
+        description: Set of highlights (bulletpoints) if any
+      sections:
+        type: array
+        description: Sequenced list of text sections (if any)
+      tags:
+        type: array
+        description: An array of one-word tags to assist search
+      meta:
+        type: object
+        description: Meta information to store with listing
+  Error:
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
+securityDefinitions:
+  job_auth:
+    type: basic
+    # type: oauth2
+    # authorizationUrl: 'http://swagger.io/api/oauth/dialog'
+    # flow: implicit
+    # scopes:
+    #   'write_jobs': modify listings
+    #   'read:listings': read listings
