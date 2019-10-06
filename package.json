@@ -18,7 +18,7 @@
     "watch": "gulp prepare-debug; tsc -w",
     "build": "gulp build",
     "clean-build": "gulp clean; gulp build",
-    "dist": "gulp build; npm version patch; cd build/release; npm publish --access public"
+    "dist": "npm version patch; gulp clean; gulp build; cd build/release; npm publish --access public; git push origin master"
   },
   "repository": {
     "type": "git",
