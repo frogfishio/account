@@ -10,7 +10,7 @@ basePath: /v1
 produces:
   - application/json
 paths:
-  '/accounts/skip/{skip}/limit/{limit}':
+  '/accounts/{skip}/{limit}':
     get:
       summary: Returns list of accounts
       description: |

@@ -5,7 +5,7 @@ export default class AccountsHandler {
   protected api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@accounts');
+    logger = engine.log.log('service:accounts');
     // this.api = engine.modules.module('account', user);
     this.api = engine.account;
   }

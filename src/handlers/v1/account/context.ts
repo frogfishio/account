@@ -6,7 +6,7 @@ export default class AccountContextHandler {
   private account;
 
   constructor(private engine: Engine, private user) {
-    logger = engine.log.log('@account-context');
+    logger = engine.log.log('service:account:context');
     // this.account = engine.modules.module('account', user);
     this.account = engine.account;
   }

@@ -6,7 +6,7 @@ export default class AccountHandler {
   private account;
 
   constructor(private engine: Engine, private user) {
-    logger = engine.log.log('@account');
+    logger = engine.log.log('service:account');
     // this.account = engine.modules.module('account', user);
     this.account = engine.account;
   }
