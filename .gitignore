@@ -5,6 +5,7 @@
 *.log
 !gulpfile.js
 !.gitignore
+.github
 
 node_modules
 /dist/
