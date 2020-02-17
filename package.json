@@ -4,7 +4,7 @@
   "description": "Account Service",
   "main": "gulpfile.js",
   "dependencies": {
-    "@frogfish/engine": "^1.0.50"
+    "@frogfish/engine": "^2.0.3"
   },
   "devDependencies": {
     "del": "^5.1.0",
