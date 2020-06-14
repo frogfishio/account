@@ -4,7 +4,7 @@
   "description": "Account Service",
   "main": "gulpfile.js",
   "dependencies": {
-    "@frogfish/kona": "^2.2.26"
+    "@frogfish/kona": "^2.2.29"
   },
   "devDependencies": {
     "del": "^5.1.0",
