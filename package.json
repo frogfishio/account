@@ -1,6 +1,6 @@
 {
   "name": "@frogfish/account",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Account Service",
   "main": "gulpfile.js",
   "dependencies": {
