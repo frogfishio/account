@@ -4,14 +4,14 @@
   "description": "Account Service",
   "main": "gulpfile.js",
   "dependencies": {
-    "@frogfish/kona": "^2.2.31"
+    "@frogfish/kona": "^2.2.39"
   },
   "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",
     "mkdirp": "^0.5.5",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "test": "gulp prepare-debug; tsc; mocha --exit --recursive build/debug/test/account",
