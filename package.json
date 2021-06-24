@@ -3,9 +3,6 @@
   "version": "1.0.24",
   "description": "Account Service",
   "main": "gulpfile.js",
-  "dependencies": {
-    "@frogfish/kona": "^2.2.44"
-  },
   "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -29,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/frogfishio/account/issues"
   },
-  "homepage": "https://github.com/frogfishio/account#readme"
+  "homepage": "https://github.com/frogfishio/account#readme",
+  "dependencies": {
+    "@frogfish/kona": "^2.2.50"
+  }
 }
