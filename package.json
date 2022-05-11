@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/frogfishio/account#readme",
   "dependencies": {
-    "@frogfish/kona": "^2.2.52"
+    "@frogfish/kona": "^2.2.53"
   }
 }
